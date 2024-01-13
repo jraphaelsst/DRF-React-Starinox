@@ -5,9 +5,9 @@ export const cores = {
   preto: '#111',
   cinza: '#333',
   primaria: 'rgb(130, 190, 255)',
-  secundaria: '#CAEEFF',
-  textoEscuro: '#081679',
-  textoClaro: '#3B88D5'
+  secundaria: 'rgb(237, 251, 255)',
+  textoEscuro: 'rgb(8, 22, 121)',
+  textoClaro: 'rgba(8, 22, 121, 0.7)'
 }
 
 export const breakpoints = {
@@ -38,5 +38,11 @@ export const GlobalCss = createGlobalStyle`
     @media (max-width: ${breakpoints.desktop}) {
       max-width: 80%;
     }
+  }
+
+  hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(130, 190, 255, 0.3), rgba(130, 190, 255, 0.75), rgba(130, 190, 255, 0.3));
   }
 `

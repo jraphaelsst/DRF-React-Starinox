@@ -1,31 +1,19 @@
+// import { useEffect, useState } from 'react'
 import logo from '../../assets/images/logo-sem-fundo.png'
 
-import {
-  Hamburguer,
-  HeaderBar,
-  HeaderRow,
-  LinkItem,
-  Links,
-  LinkTo,
-  Logo
-} from './styles'
+import { HeaderBar, HeaderRow, LinkItem, Links, LinkTo, Logo } from './styles'
 
-const Navbar = () => (
-  <HeaderBar>
-    <HeaderRow>
-      <div className="nav">
-        <Hamburguer>
-          <span />
-          <span />
-          <span />
-        </Hamburguer>
-        <LinkTo to="/home">
+const Navbar = () => {
+  return (
+    <HeaderBar id="navbar">
+      <HeaderRow className="container">
+        <LinkTo to="/">
           <Logo src={logo} alt="Logo" />
         </LinkTo>
         <nav>
           <Links className="links">
             <LinkItem className="linkItem">
-              <LinkTo to="/quem-somos">Empresa</LinkTo>
+              <LinkTo to="/empresa">Empresa</LinkTo>
             </LinkItem>
             <LinkItem className="linkItem">
               <LinkTo to="/produtos">Produtos</LinkTo>
@@ -38,16 +26,9 @@ const Navbar = () => (
             </LinkItem>
           </Links>
         </nav>
-      </div>
-      <div className="contact-links">
-        <Links>
-          <LinkItem>Facebook</LinkItem>
-          <LinkItem>Instagram</LinkItem>
-          <LinkItem>WhatsApp</LinkItem>
-        </Links>
-      </div>
-    </HeaderRow>
-  </HeaderBar>
-)
+      </HeaderRow>
+    </HeaderBar>
+  )
+}
 
 export default Navbar
