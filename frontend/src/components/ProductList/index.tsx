@@ -5,6 +5,24 @@ import ProductCard from '../ProductCard'
 type Props = {
   title: string
 }
+type Product = {
+  id: number
+  title: string
+}
+// FUTURAMENTE => vai receber via função com get na API, deixando pronto para isso....
+const productList: Array<Product> = [
+  { id: 1, title: 'box' },
+  { id: 2, title: 'corrimão' },
+  { id: 3, title: 'Ducha para Piscina' },
+  { id: 4, title: 'Escada' },
+  { id: 5, title: 'Grelha' },
+  { id: 6, title: 'Porta' },
+  { id: 7, title: 'Porta e Caixilho para Sauna' },
+  { id: 8, title: 'Dispenser para Álcool Gel' },
+  { id: 9, title: 'Revestimento' },
+  { id: 10, title: 'Visor de Piscina' },
+  { id: 11, title: 'Diversos' }
+]
 
 const ProductList = ({ title }: Props) => {
   return (
@@ -12,39 +30,13 @@ const ProductList = ({ title }: Props) => {
       <div className="container">
         <h2>{title}</h2>
         <List>
-          <li>
-            <ProductCard title="Box" />
-          </li>
-          <li>
-            <ProductCard title="Corrimão" />
-          </li>
-          <li>
-            <ProductCard title="Ducha para Piscina" />
-          </li>
-          <li>
-            <ProductCard title="Escada" />
-          </li>
-          <li>
-            <ProductCard title="Grelha" />
-          </li>
-          <li>
-            <ProductCard title="Porta" />
-          </li>
-          <li>
-            <ProductCard title="Porta e Caixilho para Sauna" />
-          </li>
-          <li>
-            <ProductCard title="Dispenser para Álcool Gel" />
-          </li>
-          <li>
-            <ProductCard title="Revestimento" />
-          </li>
-          <li>
-            <ProductCard title="Visor de Piscina" />
-          </li>
-          <li>
-            <ProductCard title="Diversos" />
-          </li>
+          {productList.map((product: Product) => {
+            return (
+              <li key={product.id}>
+                <ProductCard title={product.title} />
+              </li>
+            )
+          })}
         </List>
       </div>
     </Container>
