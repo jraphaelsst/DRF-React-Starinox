@@ -4,8 +4,9 @@ export const cores = {
   branco: '#fff',
   preto: '#111',
   cinza: '#333',
-  primaria: 'rgb(130, 190, 255)',
-  secundaria: 'rgb(237, 251, 255)',
+  primaria: '#fff',
+  secundaria: '#8E959C',
+  terciaria: '#090C64',
   textoEscuro: 'rgb(8, 22, 121)',
   textoClaro: 'rgba(8, 22, 121, 0.7)'
 }
@@ -27,17 +28,14 @@ export const GlobalCss = createGlobalStyle`
 
   body {
     background-color: ${cores.branco};
-    color: ${cores.textoEscuro};
+    color: ${cores.terciaria};
   }
 
   .container {
-    max-width: 1024px;
     width: 100%;
+    max-width: 1400px;
     margin: 0 auto;
-
-    @media (max-width: ${breakpoints.desktop}) {
-      max-width: 80%;
-    }
+    padding: 0 16px;
   }
 
   hr {

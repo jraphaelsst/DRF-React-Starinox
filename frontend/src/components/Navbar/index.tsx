@@ -1,7 +1,34 @@
 // import { useEffect, useState } from 'react'
 import logo from '../../assets/images/logo-sem-fundo.png'
 
-import { HeaderBar, HeaderRow, LinkItem, Links, LinkTo, Logo } from './styles'
+import {
+  HeaderBar,
+  HeaderRow,
+  LinkAnimation,
+  LinkItem,
+  Links,
+  LinkTo,
+  Logo
+} from './styles'
+
+const links = [
+  {
+    link: '/empresa',
+    title: 'Empresa'
+  },
+  {
+    link: '/produtos',
+    title: 'Produtos'
+  },
+  {
+    link: '/localizacao',
+    title: 'Localização'
+  },
+  {
+    link: '/contato',
+    title: 'Contato'
+  }
+]
 
 const Navbar = () => {
   return (
@@ -12,18 +39,15 @@ const Navbar = () => {
         </LinkTo>
         <nav>
           <Links className="links">
-            <LinkItem className="linkItem">
-              <LinkTo to="/empresa">Empresa</LinkTo>
-            </LinkItem>
-            <LinkItem className="linkItem">
-              <LinkTo to="/produtos">Produtos</LinkTo>
-            </LinkItem>
-            <LinkItem className="linkItem">
-              <LinkTo to="/localizacao">Localização</LinkTo>
-            </LinkItem>
-            <LinkItem className="linkItem">
-              <LinkTo to="/contato">Contato</LinkTo>
-            </LinkItem>
+            {links.map((item, index) => {
+              return (
+                <LinkItem className="linkItem" key={index}>
+                  <LinkTo to={item.link}>
+                    <LinkAnimation>{item.title}</LinkAnimation>
+                  </LinkTo>
+                </LinkItem>
+              )
+            })}
           </Links>
         </nav>
       </HeaderRow>
