@@ -1,4 +1,4 @@
-import { Container, List } from './styles'
+import { Container, Description, List, Title } from './styles'
 
 import ProductCard from '../ProductCard'
 
@@ -28,7 +28,12 @@ const ProductList = ({ title }: Props) => {
   return (
     <Container>
       <div className="container">
-        <h2>{title}</h2>
+        <Title>{title}</Title>
+        <Description>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus a
+          consequatur quisquam aliquid fugit, fugiat nemo ad est corporis in
+          sunt enim quam. Nostrum ut unde earum ullam dolorum corporis.
+        </Description>
         <List>
           {productList.map((product: Product) => {
             return (
