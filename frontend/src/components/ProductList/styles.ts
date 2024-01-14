@@ -22,7 +22,7 @@ export const Description = styled.p`
 
 export const List = styled.ul`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 36px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 22px;
   margin: 40px 0 40px;
 `

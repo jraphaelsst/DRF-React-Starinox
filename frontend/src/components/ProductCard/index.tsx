@@ -1,19 +1,22 @@
 import foto from '../../assets/images/portas_final_1_peq.png'
 
-import { Card, Titulo } from './styles'
+import { Card, CardBox, Img, Title } from './styles'
 
-type Props = {
+export type Props = {
   title: string
 }
 
 const ProductCard = ({ title }: Props) => {
   return (
-    <Card to="" title="Clique para ver mais detalhes">
-      <img src={foto} alt="" />
+    <CardBox>
+      <Card to="" title="Clique para ver mais detalhes">
+        <Img style={{ backgroundImage: `url(${foto})` }}></Img>
+        <Title>{title}Lorem ipsum silor dolor</Title>
+      </Card>
       <div>
-        <Titulo>{title}</Titulo>
+        <p></p>
       </div>
-    </Card>
+    </CardBox>
   )
 }
 
